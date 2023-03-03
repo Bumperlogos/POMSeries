@@ -7,12 +7,14 @@ import org.openqa.selenium.WebElement;
 public class JavaScriptUtil {
 	
 	WebDriver driver;
+	Properties prop;
 
 	public JavaScriptUtil(WebDriver driver) {
 		this.driver = driver;
 	}
 
 	public void flash(WebElement element) {
+		if(Boolean.parseBoolean(prop.getProperty("highlight")));
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		String bgcolor = element.getCssValue("backgroundColor");
 		for (int i = 0; i < 4; i++) {
